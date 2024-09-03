@@ -47,15 +47,7 @@ const Resume = () => {
   return (
     <div className="max-w-4xl mx-auto p-8 bg-gray-900 text-white min-h-screen relative">
       {/* Header Section */}
-      <Link
-        to="https://aquamarine-hedwig-69.tiiny.site/"
-        target="_blank"
-        className="absolute top-4 right-4 text-white bg-green-500 hover:bg-green-700 px-4 py-2 
-        rounded shadow-lg flex items-center"
-      >
-        <BsDownload className="mr-2" />
-        Download PDF
-      </Link>
+      
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-2">PARIVESH RIMJHA</h1>
         <div className="flex justify-center gap-6 text-gray-400">
@@ -200,6 +192,16 @@ const Resume = () => {
         <p className="text-gray-400 mt-4">Place: Indore</p>
         <p className="text-pink-400 mt-4 font-bold">PARIVESH RIMJHA</p>
       </section>
+      
+      <Link
+        to="https://aquamarine-hedwig-69.tiiny.site/"
+        target="_blank"
+        className="text-center w-1/3 mx-auto text-white bg-green-500 hover:bg-green-700 px-4 py-2 
+        rounded shadow-lg flex"
+      >
+        <BsDownload size={20} className="mr-2" />
+        Download PDF
+      </Link>
     </div>
   );
 };
