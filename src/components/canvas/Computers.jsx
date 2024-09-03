@@ -4,12 +4,13 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
-  const { scene , error} = useGLTF("/Parivesh-Portfolio/desktop_pc/scene.gltf");
+const Computers = ({ scale, position }) => {
+  const { scene, error } = useGLTF("/Parivesh-Portfolio/desktop_pc/scene.gltf");
 
   if (error) {
-    console.log("Failed to load model ",error);
+    console.log("Failed to load model ", error);
   }
+
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor='black' />
@@ -24,8 +25,8 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={scene}
-        scale={isMobile ? 0.3 : 0.75}
-        position={isMobile ? [0, -2, -0.6] : [0, -3.25, -1.5]}
+        scale={scale}
+        position={position}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -33,26 +34,30 @@ const Computers = ({ isMobile }) => {
 };
 
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [scale, setScale] = useState(0.75);
+  const [position, setPosition] = useState([0, -3.25, -1.5]);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const updateModelSettings = () => {
+      const width = window.innerWidth;
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+      if (width <= 500) {
+        setScale(0.3);
+        setPosition([0, -2, -0.6]);
+      } else if (width <= 768) { // For medium-sized screens
+        setScale(0.6);
+        setPosition([0, -3, -1.5]);
+      } else {
+        setScale(0.75);
+        setPosition([0, -3.25, -1.5]);
+      }
     };
 
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    updateModelSettings(); // Set initial values
+    window.addEventListener("resize", updateModelSettings);
 
-    // Remove the listener when the component is unmounted
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      window.removeEventListener("resize", updateModelSettings);
     };
   }, []);
 
@@ -70,7 +75,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Computers scale={scale} position={position} />
       </Suspense>
 
       <Preload all />

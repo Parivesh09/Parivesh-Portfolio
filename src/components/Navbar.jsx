@@ -12,6 +12,10 @@ const Navbar = () => {
 
   const { pathname } = useLocation();
 
+  if (pathname === "/") {
+    // setScrolled(true);
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -29,13 +33,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`px-4 w-full flex items-center py-6 fixed top-0 z-20 ${
+        scrolled ? "bg-primary" : pathname === "/" ?  "bg-primary bg-opacity-50" :"bg-transparent"
       }`}
     >
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+      <div className='w-full flex justify-between items-center mx-0'>
         <Link
           to='/'
           className='flex items-center gap-2'
@@ -51,7 +53,7 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden md:flex flex-row gap-5'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -65,7 +67,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='md:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
             alt='menu'
