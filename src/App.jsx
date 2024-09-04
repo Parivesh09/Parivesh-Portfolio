@@ -4,6 +4,8 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Stars
 import Resume from "./components/Resume";
 
 const App = () => {
+
+  const basePath = "/Parivesh-Portfolio"
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
@@ -12,17 +14,17 @@ const App = () => {
         
         <Routes>
           {/* Define Routes for each component */}
-          <Route path="/" element={
+          <Route path={basePath} element={
             <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
               <Hero />
             </div>
           } />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/tech" element={<Tech />} />
-          <Route path="/work" element={<Works />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={
+          <Route path={`${basePath}/about`} element={<About />} />
+          <Route path={`${basePath}/experience`} element={<Experience />} />
+          <Route path={`${basePath}/tech`} element={<Tech />} />
+          <Route path={`${basePath}/work`} element={<Works />} />
+          <Route path={`${basePath}/resume`} element={<Resume />} />
+          <Route path={`${basePath}/contact`} element={
             <div className='relative z-0'>
               <Contact />
               <StarsCanvas />

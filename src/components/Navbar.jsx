@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav
       className={`px-4 w-full flex items-center py-6 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : pathname === "/" ?  "bg-primary bg-opacity-50" :"bg-transparent"
+        scrolled ? "bg-primary" : pathname === "/Parivesh-Portfolio" ?  "bg-primary bg-opacity-50" :"bg-transparent"
       }`}
     >
       <div className='w-full flex justify-between items-center mx-0'>
@@ -62,7 +62,7 @@ const Navbar = () => {
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
-              <Link to={`/${nav.id}`}>{nav.title}</Link>
+              <Link to={`/Parivesh-Portfolio/${nav.id}`}>{nav.title}</Link>
             </li>
           ))}
         </ul>
@@ -92,7 +92,7 @@ const Navbar = () => {
                     setActive(nav.title);
                   }}
                 >
-                  <Link to={`${nav.id}`}>{nav.title}</Link>
+                  <Link to={`/Parivesh-Portfolio/${nav.id}`}>{nav.title}</Link>
                 </li>
               ))}
             </ul>
