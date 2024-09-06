@@ -30,6 +30,12 @@ import carrent from "./carrent.png";
 import jobhunt from "./job-hunt.png";
 import tripguide from "./tripguide.png";
 
+// BLOGS IMAGES
+import ReactIntroduction from "./learn-react-introduction.png";
+import ReactHooksAdv from "./learn-react-advanced.png";
+import StateManagementRedux from "./State-Managemen- with-Redux.png";
+import ServerSideRenderingNext from "./Server-Side Rendering with Nextjs.jpg"
+
 export {
   logo,
   backend,
@@ -58,5 +64,9 @@ export {
   internLogo,
   python,
   ml,
-  cpp
+  cpp,
+  ReactIntroduction,
+  ReactHooksAdv,
+  StateManagementRedux,
+  ServerSideRenderingNext
 };

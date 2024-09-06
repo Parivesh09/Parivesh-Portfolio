@@ -18,14 +18,14 @@ import {
   internLogo,
   python,
   ml,
-  cpp
+  cpp,
+  ReactIntroduction,
+  ReactHooksAdv,
+  StateManagementRedux,
+  ServerSideRenderingNext
 } from "../assets";
 
 export const navLinks = [
-  {
-    id: "",
-    title: "Home",
-  },
   {
     id: "about",
     title: "About",
@@ -43,7 +43,7 @@ export const navLinks = [
     title: "Resume",
   },
   {
-    id: "blog",
+    id: "blogs",
     title: "Blog",
   }
 ];
@@ -232,4 +232,178 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const blogPosts = [
+  {
+    name: "React",
+    posts: [
+      {
+        title: "Introduction to React",
+        description: "Learn the basics of React and how to build your first component.",
+        tags: [{ name: "React", color: "text-blue-500" }, { name: "JavaScript", color: "text-yellow-500" }],
+        // image: ReactIntroduction,
+        post_link: "https://yourblog.com/react-introduction",
+      },
+      {
+        title: "Advanced React Hooks",
+        description: "Learn how to use React hooks effectively and efficiently.",
+        tags: [{ name: "React", color: "text-blue-500" }, { name: "Hooks", color: "text-yellow-500" }],
+        // image: ReactHooksAdv,
+        post_link: "https://yourblog.com/react-hooks-advanced",
+      },
+      {
+        title: "State Management with Redux",
+        description: "Learn how to manage state in React applications using Redux.",
+        tags: [{ name: "React", color: "text-blue-500" }, { name: "Redux", color: "text-yellow-500" }],
+        // image: StateManagementRedux,
+        post_link: "https://yourblog.com/react-redux-state-management",
+      },
+      {
+        title: "Server-Side Rendering with Next.js",
+        description: "Learn how to build a fully dynamic and SEO-friendly web application using Next.js.",
+        tags: [{ name: "Next.js", color: "text-blue-500" }, { name: "Server-Side Rendering", color: "text-yellow-500" }],
+        // image: ServerSideRenderingNext,
+        post_link: "https://yourblog.com/nextjs-server-side-rendering",
+      },
+    ],
+  },
+  {
+    name: "HTML",
+    posts: [
+      {
+        title: "Introduction to HTML",
+        description: "Learn the basics of HTML and how to create a web page structure.",
+        tags: [{ name: "HTML", color: "text-red-500" }],
+        // image: HTMLIntro,
+        post_link: "https://yourblog.com/html-introduction",
+      },
+      {
+        title: "HTML Forms and Input",
+        description: "Explore how to create and manage forms using HTML.",
+        tags: [{ name: "HTML", color: "text-red-500" }, { name: "Forms", color: "text-blue-500" }],
+        // image: HTMLForms,
+        post_link: "https://yourblog.com/html-forms",
+      },
+    ],
+  },
+  {
+    name: "CSS",
+    posts: [
+      {
+        title: "Introduction to CSS",
+        description: "Learn the basics of CSS for styling your web pages.",
+        tags: [{ name: "CSS", color: "text-blue-500" }],
+        // image: CSSIntro,
+        post_link: "https://yourblog.com/css-introduction",
+      },
+      {
+        title: "Flexbox and Grid Layout",
+        description: "Master layout design using Flexbox and Grid in CSS.",
+        tags: [{ name: "CSS", color: "text-blue-500" }, { name: "Flexbox", color: "text-green-500" }],
+        // image: CSSFlexboxGrid,
+        post_link: "https://yourblog.com/css-flexbox-grid",
+      },
+    ],
+  },
+  {
+    name: "JavaScript",
+    posts: [
+      {
+        title: "JavaScript Basics",
+        description: "Understand the basics of JavaScript, from variables to functions.",
+        tags: [{ name: "JavaScript", color: "text-yellow-500" }],
+        // image: JSBasics,
+        post_link: "https://yourblog.com/javascript-basics",
+      },
+      {
+        title: "Asynchronous JavaScript",
+        description: "Learn about asynchronous programming, callbacks, promises, and async/await.",
+        tags: [{ name: "JavaScript", color: "text-yellow-500" }, { name: "Async", color: "text-blue-500" }],
+        // image: JSAsync,
+        post_link: "https://yourblog.com/javascript-asynchronous",
+      },
+    ],
+  },
+  {
+    name: "Redux Toolkit",
+    posts: [
+      {
+        title: "Introduction to Redux Toolkit",
+        description: "Learn how to manage state using Redux Toolkit for React applications.",
+        tags: [{ name: "Redux Toolkit", color: "text-purple-500" }, { name: "React", color: "text-blue-500" }],
+        // image: ReduxToolkitIntro,
+        post_link: "https://yourblog.com/redux-toolkit-introduction",
+      },
+    ],
+  },
+  {
+    name: "Tailwind CSS",
+    posts: [
+      {
+        title: "Introduction to Tailwind CSS",
+        description: "Get started with utility-first CSS using Tailwind CSS.",
+        tags: [{ name: "Tailwind CSS", color: "text-teal-500" }],
+        // image: TailwindCSSIntro,
+        post_link: "https://yourblog.com/tailwind-css-introduction",
+      },
+      {
+        title: "Responsive Design with Tailwind CSS",
+        description: "Learn how to build responsive web pages with Tailwind CSS.",
+        tags: [{ name: "Tailwind CSS", color: "text-teal-500" }, { name: "Responsive", color: "text-blue-500" }],
+        // image: TailwindCSSResponsive,
+        post_link: "https://yourblog.com/tailwind-css-responsive",
+      },
+    ],
+  },
+  {
+    name: "MongoDB",
+    posts: [
+      {
+        title: "Introduction to MongoDB",
+        description: "Learn how to manage databases using MongoDB, a NoSQL solution.",
+        tags: [{ name: "MongoDB", color: "text-green-500" }],
+        // image: MongoDBIntro,
+        post_link: "https://yourblog.com/mongodb-introduction",
+      },
+    ],
+  },
+  {
+    name: "Node.js",
+    posts: [
+      {
+        title: "Introduction to Node.js",
+        description: "Learn how to build backend applications using Node.js.",
+        tags: [{ name: "Node.js", color: "text-green-500" }],
+        // image: NodeJSIntro,
+        post_link: "https://yourblog.com/nodejs-introduction",
+      },
+      {
+        title: "Building APIs with Express.js",
+        description: "Learn how to create RESTful APIs using Node.js and Express.js.",
+        tags: [{ name: "Node.js", color: "text-green-500" }, { name: "Express.js", color: "text-yellow-500" }],
+        // image: NodeExpressAPI,
+        post_link: "https://yourblog.com/nodejs-express-api",
+      },
+    ],
+  },
+  {
+    name: "Three.js",
+    posts: [
+      {
+        title: "Introduction to Three.js",
+        description: "Learn how to create 3D graphics in the browser using Three.js.",
+        tags: [{ name: "Three.js", color: "text-blue-500" }],
+        // image: ThreeJSIntro,
+        post_link: "https://yourblog.com/threejs-introduction",
+      },
+      {
+        title: "3D Animations with Three.js",
+        description: "Learn how to create 3D animations using Three.js and JavaScript.",
+        tags: [{ name: "Three.js", color: "text-blue-500" }, { name: "Animations", color: "text-red-500" }],
+        // image: ThreeJSAnimations,
+        post_link: "https://yourblog.com/threejs-animations",
+      },
+    ],
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects, blogPosts };

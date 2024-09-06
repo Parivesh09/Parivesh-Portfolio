@@ -39,7 +39,7 @@ const Navbar = () => {
     >
       <div className='w-full flex justify-between items-center mx-0'>
         <Link
-          to='/'
+          to='/Parivesh-Portfolio'
           className='flex items-center gap-2'
           onClick={() => {
             setActive("");

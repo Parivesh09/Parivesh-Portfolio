@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 import Resume from "./components/Resume";
+import BlogSection from "./components/Blogs";
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path={`${basePath}/tech`} element={<Tech />} />
           <Route path={`${basePath}/work`} element={<Works />} />
           <Route path={`${basePath}/resume`} element={<Resume />} />
+          <Route path={`${basePath}/blogs`} element={<BlogSection />} />
           <Route path={`${basePath}/contact`} element={
             <div className='relative z-0'>
               <Contact />
