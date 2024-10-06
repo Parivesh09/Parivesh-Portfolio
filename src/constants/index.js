@@ -42,10 +42,10 @@ export const navLinks = [
     id: "resume",
     title: "Resume",
   },
-  {
-    id: "blogs",
-    title: "Blog",
-  }
+  // {
+  //   id: "blogs",
+  //   title: "Blog",
+  // }
 ];
 
 const services = [
@@ -71,7 +71,7 @@ const technologies = [
   {
     name: "HTML 5",
     icon: html,
-    link: "https://www.w3schools.com/html/",
+    link: "https://html.com/",
   },
   {
     name: "CSS 3",

@@ -194,13 +194,15 @@ const Resume = () => {
       </section>
       
       <Link
-        to="https://aquamarine-hedwig-69.tiiny.site/"
+        to="https://aqua-anestassia-14.tiiny.site"
         target="_blank"
         className="text-center w-1/3 mx-auto text-white bg-green-500 hover:bg-green-700 px-4 py-2 
         rounded shadow-lg flex"
       >
-        <BsDownload size={20} className="mr-2" />
-        Download PDF
+        <span className="font-bold w-full flex items-center justify-center gap-1">
+          Download PDF
+        <BsDownload size={20} className="" />
+          </span>
       </Link>
     </div>
   );
